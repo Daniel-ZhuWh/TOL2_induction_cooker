@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How an induction cooker works</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container" style="width: 70%; margin: auto">
+    <header>
+    <h1>How do induction cookers work?</h1>
+    <p><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
+    </header>
+    
+    
+        <div class="page" id="welcome">
+            <p>
+                Welcome! 
+            This is a course about how an induction cooker works. There will be three people in  your team. And each one of you will be assigned a video clip to study a part of the working mechanism of induction cooker  (three parts in total). Then you will teach each other what you have learned.  Afterward,  you will have a recap. In the end, all three of you will take a final test that covers the knowledge of all three parts. Your final score will be the average score of your group.
+            Good luck!
+            </p>
+        
+            <div class="next_buttons" data-next="#choose_branch">
+                Next
+            </div>
+        </div>
+        
+<!--part choosing-->
+        <div class="page" id="choose_branch" style="display: none;">
+            <p>
+             Please discuss with your teammates and decide which part each person should learn. Then <b>choose your corresponding part to learn from the side bar. </b>
+            </p>
+            <div class="next_buttons_link" data-next="#part_1">i.Magnetic Field and How it could be created</div>
+            <div class="next_buttons_link" data-next="#part_2">ii.Electromagnetic Induction</div>
+            <div class="next_buttons_link" data-next="#part_3">iii.Ferromagnetism</div>
+        </div>
+        
+<!--part introduction-->
+        <div class="page" id="part_1" style="display: none;">
+            <div style="font: Lobster; font-size: 100">Part 1: Magnetic Field and How it could be created</div>
+            Time: 5 mins
+            <div class="next_buttons" data-next="#video1">
+                Next
+            </div>
+        </div>
+        <div class="page" id="part_2" style="display: none;">
+            <div style="font: Lobster; font-size: 100">Part 2: Electromagnetic Induction</div>
+            Time: 5 mins
+            <div class="next_buttons" data-next="#video2">
+                Next
+            </div>
+        </div>
+        <div class="page" id="part_3" style="display: none;">
+            <div style="font: Lobster; font-size: 100">Part 3: Ferromagnetism</div>
+            Time: 5 mins
+            <div class="next_buttons" data-next="#video3">
+                Next
+            </div>
+        </div>
+        
+<!--video player-->
+        <div class="page" id="video1" style="display: none;">
+            <div id="player1"></div>
+            <div class="next_assess" data-next="#assessment1">Next</div>
+        </div>
+        <div class="page" id="video2" style="display: none;">
+            <div id="player2"></div>
+            <div class="next_assess" data-next="#assessment2">Next</div>
+        </div>
+        <div class="page" id="video3" style="display: none;">
+            <div id="player3"></div>
+            <div class="next_assess" data-next="#assessment3">Next</div>
+        </div>
+        
+<!--Assessment questions-->
+        <div class="page" id="assessment" style="display: none;">
+            <div id="question"></div>
+            <div class="option" id="choiceA" onclick="checkAnswer('A')"></div>
+            <div class="option" id="choiceB" onclick="checkAnswer('B')"></div>
+            <div class="option" id="choiceC" onclick="checkAnswer('C')"></div>
+            <div class="option" id="choiceD" onclick="checkAnswer('D')"></div>
+            <div id="feedback"></div>
+            <div>
+            <button id="next_q_btn" onclick="next_q()">Next question</button>
+            <div class="next_buttons" id="discussion_btn" data-next="#discussion" style="display: none">Continue to discussion</div>
+            </div>
+            
+        </div>
+        
+<!--Discussion page-->
+        <div class="page" id="discussion" style="display: none;">
+            <p>
+            Discussion Time!
+                Please discuss with your teammates about what you just learned. You have 15 minutes.
+            </p>
+            <div id="start_dis_timer">Start Discussion</div>
+            <p id="timer"></p>
+            <div class="next_buttons" data-next="#review">Next</div>
+        </div>
+        
+<!--  Review page   -->
+        <div class="page" id="review" style="display: none;">
+            <div id="player4"></div>
+            <div class="next_buttons" data-next="#final_test">Next</div>
+        </div>
+        
+<!--  Final test      -->
+        <div class="page" id="final_test" style="display: none;">
+            Final Test Time!
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+.next_buttons, #start_dis_timer{
+    display: inline-block;
+    width : 135px;
+    text-align: center;
+    border : 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    padding : 5px;
+    transition: .3s all ease-in-out;
+}
+
+#next_q_btn {
+    transition: .3s all ease-in-out;
+}
+
+#discussion_btn, #next_q_btn {
+    position: absolute;
+}
+
+.next_buttons_link {
+    cursor: pointer;
+}
+
+.next_buttons_link:hover{
+    color: dodgerblue;
+}
+
+
+.option {
+/*    display: inline-block;*/
+    height : auto;
+    width: 80%;
+    text-align: center;
+    border : 1px solid grey;
+    border-radius: 8px;
+    cursor: pointer;
+    padding : 5px; 
+    margin: 20px;
+}
+
+.option_selected {
+    border : 2px solid blue;
+}
+.next_assess {
+    display: inline-block;
+    width : 135px;
+    text-align: center;
+    border : 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    padding : 5px;    
+}
+
+#feedback {
+    height: auto;
+    padding: 5px;
+}
+
+.feedback_correct {
+    background-color: darkseagreen;
+    border : 2px solid darkgreen;
+/*    border-color: darkgreen;*/
+    border-radius: 5px;
+}
+
+.feedback_wrong {
+    background-color: darksalmon;
+    border : 2px solid darkred;
+/*    border-color: darkred;*/
+    border-radius: 5px;
+}
+.page {
+    position: absolute;
+    margin: 60px auto;
+    width: 1000px;
+}
+
+body {
+    width: 70%;
+    margin: 60px auto;
+}
