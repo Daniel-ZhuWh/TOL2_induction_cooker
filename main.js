@@ -118,7 +118,7 @@ let question_set3 = {
             B : "electrcity; heat",
             correct : "B",
             feedback : {
-                A : "try to think about what kind of energy it takes to cook your food with pot",
+                A : "Try to think about what kind of energy it takes to cook your food with pot",
                 B : "Exactly",
             }
         },{
@@ -129,7 +129,7 @@ let question_set3 = {
             B : "conductive; magnetic",
             C : "conductive; nonmagnetic",
             D : "nonconductive; nonmagnetic",
-            correct : "A",
+            correct : "B",
             feedback : {
                 A : "Not quite right",
                 B : "Yes that's the case!",
