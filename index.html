@@ -11,18 +11,57 @@
     <p><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
     </header>
     
-    
+        <div id="timer"></div>
         <div class="page" id="welcome">
-            <p>
-                Welcome! 
-            This is a course about how an induction cooker works. There will be three people in  your team. And each one of you will be assigned a video clip to study a part of the working mechanism of induction cooker  (three parts in total). Then you will teach each other what you have learned.  Afterward,  you will have a recap. In the end, all three of you will take a final test that covers the knowledge of all three parts. Your final score will be the average score of your group.
-            Good luck!
-            </p>
-        
+            <p>Below is a short video that tells you how this course works</p>
+            <div id="player5"></div>
             <div class="next_buttons" data-next="#choose_branch">
                 Next
             </div>
         </div>
+            
+            
+<!--
+            <h1>Custom Checkboxes</h1>
+            <label class="container">One
+              <input type="radio" checked="checked">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Two
+              <input type="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Three
+              <input type="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Four
+              <input type="radio">
+              <span class="checkmark"></span>
+            </label>
+-->
+            
+<!--
+            <h1>Custom Radio Buttons</h1>
+            <label class="container">One
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Two
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Three
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Four
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            
+-->
+            
         
 <!--part choosing-->
         <div class="page" id="choose_branch" style="display: none;">
@@ -38,49 +77,63 @@
         <div class="page" id="part_1" style="display: none;">
             <div style="font: Lobster; font-size: 100">Part 1: Magnetic Field and How it could be created</div>
             Time: 5 mins
-            <div class="next_buttons" data-next="#video1">
+            <div class="next_buttons start_instr_timer" data-next="#video1">
                 Next
             </div>
         </div>
         <div class="page" id="part_2" style="display: none;">
             <div style="font: Lobster; font-size: 100">Part 2: Electromagnetic Induction</div>
             Time: 5 mins
-            <div class="next_buttons" data-next="#video2">
+            <div class="next_buttons start_instr_timer" data-next="#video2">
                 Next
             </div>
         </div>
         <div class="page" id="part_3" style="display: none;">
             <div style="font: Lobster; font-size: 100">Part 3: Ferromagnetism</div>
             Time: 5 mins
-            <div class="next_buttons" data-next="#video3">
+            <div class="next_buttons start_instr_timer" data-next="#video3">
                 Next
             </div>
         </div>
         
 <!--video player-->
-        <div class="page" id="video1" style="display: none;">
+        <div class="page instr" id="video1" style="display: none;">
             <div id="player1"></div>
             <div class="next_assess" data-next="#assessment1">Next</div>
         </div>
-        <div class="page" id="video2" style="display: none;">
+        <div class="page instr" id="video2" style="display: none;">
             <div id="player2"></div>
             <div class="next_assess" data-next="#assessment2">Next</div>
         </div>
-        <div class="page" id="video3" style="display: none;">
+        <div class="page instr" id="video3" style="display: none;">
             <div id="player3"></div>
             <div class="next_assess" data-next="#assessment3">Next</div>
         </div>
         
 <!--Assessment questions-->
-        <div class="page" id="assessment" style="display: none;">
+        <div class="page instr" id="assessment" style="display: none;">
             <div id="question"></div>
-            <div class="option" id="choiceA" onclick="checkAnswer('A')"></div>
-            <div class="option" id="choiceB" onclick="checkAnswer('B')"></div>
-            <div class="option" id="choiceC" onclick="checkAnswer('C')"></div>
-            <div class="option" id="choiceD" onclick="checkAnswer('D')"></div>
+            
+            <div id="option_container">
+                <div id="sing_container">
+                    <div class="option sing_option" id="choiceA" onclick="checkAnswer('A')"></div>
+                    <div class="option sing_option" id="choiceB" onclick="checkAnswer('B')"></div>
+                    <div class="option sing_option" id="choiceC" onclick="checkAnswer('C')"></div>
+                    <div class="option sing_option" id="choiceD" onclick="checkAnswer('D')"></div>
+                </div>
+            
+                <div id="multi_container">
+                    <div class="option multi_option" id="mchoiceA"></div>
+                    <div class="option multi_option" id="mchoiceB"></div>
+                    <div class="option multi_option" id="mchoiceC"></div>
+                    <div class="option multi_option" id="mchoiceD"></div>
+                </div>
+            </div>
+            
             <div id="feedback"></div>
             <button id="next_q_btn" onclick="next_q()">Next question</button>
             <div class="next_buttons" id="discussion_btn" data-next="#discussion" style="display: none">Continue to discussion</div>
+            
         </div>
         
 <!--Discussion page-->
@@ -89,8 +142,8 @@
             Discussion Time!
                 Please discuss with your teammates about what you just learned. You have 15 minutes.
             </p>
-            <div id="start_dis_timer">Start Discussion</div>
-            <p id="timer"></p>
+            <div id="start_dis_timer" data-next="#review">Start Discussion</div>
+<!--            <p id="timer"></p>-->
             <div class="next_buttons" data-next="#review">Next</div>
         </div>
         
@@ -102,7 +155,128 @@
         
 <!--  Final test      -->
         <div class="page" id="final_test" style="display: none;">
-            Final Test Time!
+            <div class="question" id="final_1">
+                <p>1. A magnetic field can be created by which of the following?</p>
+                <input type="checkbox" id="final_1_A" value="A" name="final_1">
+                <label for="final_1_A"> Magnet</label><br>
+                <input type="checkbox" id="final_1_B" value="B" name="final_1">
+                <label for="final_1_B"> Electricity</label><br>
+                <input type="checkbox" id="final_1_C" value="C" name="final_1">
+                <label for="final_1_C"> Thermostat</label><br>
+                <input type="checkbox" id="final_1_D" value="D" name="final_1">
+                <label for="final_1_D"> Iron</label><br>
+                <div id="feedback_1" style="display: none"></div>
+                <br>
+            </div>
+            
+            <div class="question" id="final_2">
+                <p>2. Why would an induction cooker generate a magnetic field?</p>
+                <input type="radio" id="final_2_A" value="A" name="final_2">
+                <label for="final_2_A"> When the induction cooker is plugged in, the electric current running through the coil will create a magnetic field.</label><br>
+                <input type="radio" id="final_2_B" value="B" name="final_2">
+                <label for="final_2_B"> There is a magnet in the induction cooker that can generate a magnetic field.</label><br>
+                <input type="radio" id="final_2_C" value="C" name="final_2">
+                <label for="final_2_C"> Because the induction cooker is made of iron.</label><br>
+                <div id="feedback_2" style="display: none"></div>
+                <br>
+                
+            </div>
+        
+            
+            <div class="question" id="final_3">
+                <p>3. What kinds of energy does eddy current generate?</p>
+                <input type="radio" id="final_3_A" value="A" name="final_3">
+                <label for="final_3_A"> Thermal energy and electrical energy</label><br>
+                <input type="radio" id="final_3_B" value="B" name="final_3">
+                <label for="final_3_B"> Thermal energy and chemical energy</label><br>
+                <input type="radio" id="final_3_C" value="C" name="final_3">
+                <label for="final_3_C"> Thermal energy and mechanical energy</label><br>
+                <input type="radio" id="final_3_D" value="D" name="final_3">
+                <label for="final_3_D"> Mechanical energy and electrical energy</label><br><br>
+            </div>
+            
+            <div class="question" id="final_4">
+                <p>4. What creates an eddy current in the pot?</p>
+                <input type="radio" id="final_4_A" value="A" name="final_4">
+                <label for="final_4_A"> Magnetic field</label><br>
+                <input type="radio" id="final_4_B" value="B" name="final_4">
+                <label for="final_4_B"> Electricity</label><br>
+                <input type="radio" id="final_4_C" value="C" name="final_4">
+                <label for="final_4_C"> Fire</label><br>
+                <input type="radio" id="final_4_D" value="D" name="final_4">
+                <label for="final_4_D"> Coil</label><br><br>
+            </div>
+            
+            <div class="question" id="final_5">
+                <p>5. What kind of energy transfer happens when your cell phone gets warm as you constantly use it?</p>
+                <input type="radio" id="final_5_A" value="A" name="final_5">
+                <label for="final_5_A"> Thermal energy -> electrical energy</label><br>
+                <input type="radio" id="final_5_B" value="B" name="final_5">
+                <label for="final_5_B"> Mechanical energy -> thermal energy</label><br>
+                <input type="radio" id="final_5_C" value="C" name="final_5">
+                <label for="final_5_C"> Electrical energy -> Thermal energy</label><br>
+                <input type="radio" id="final_5_D" value="D" name="final_5">
+                <label for="final_5_D"> Thermal energy -> chemical energy</label><br><br>
+            </div>
+            
+            <div class="question" id="final_6">
+                <p>6. Which one of the following is most efficient in heating food when we put it on an induction cooker?</p>
+                <input type="radio" id="final_6_A" value="A" name="final_6">
+                <label for="final_6_A"> Copper pot</label><br>
+                <input type="radio" id="final_6_B" value="B" name="final_6">
+                <label for="final_6_B"> Stainless steel pot</label><br>
+                <input type="radio" id="final_6_C" value="C" name="final_6">
+                <label for="final_6_C"> Glass pot</label><br><br>
+            </div>
+            
+            <button class="next_buttons" data-next="#indiv_score" onclick="final_submit()">Submit</button>
+            
+<!--
+            <div id="final_7">
+                <p>A magnetic field can be created by which of the following?</p>
+                <input type="radio" id="final_7_A" value="A" name="final_7">
+                <label for="final_7_A"> Magnet</label><br>
+                <input type="radio" id="final_7_B" value="B" name="final_7">
+                <label for="final_7_B"> Magnet</label><br>
+                <input type="radio" id="final_7_C" value="C" name="final_7">
+                <label for="final_7_C"> Magnet</label><br>
+                <input type="radio" id="final_7_D" value="D" name="final_7">
+                <label for="final_7_D"> Magnet</label><br><br>
+            </div>
+            
+            <div id="final_8">
+                <p>A magnetic field can be created by which of the following?</p>
+                <input type="radio" id="final_8_A" value="A" name="final_8">
+                <label for="final_8_A"> Magnet</label><br>
+                <input type="radio" id="final_8_B" value="B" name="final_8">
+                <label for="final_8_B"> Magnet</label><br>
+                <input type="radio" id="final_8_C" value="C" name="final_8">
+                <label for="final_8_C"> Magnet</label><br>
+                <input type="radio" id="final_8_D" value="D" name="final_8">
+                <label for="final_8_D"> Magnet</label><br><br>
+            </div>
+-->
+            
+        </div>
+        
+        <div class="page" id="indiv_score" style="display: none;">
+            <p>Congratulations! You earned a score of <span id="score"></span>!</p>
+            <div class="next_buttons" data-next="#add_score">Next</div>
+        </div>
+        
+        <div class="page" id="add_score" style="display: none;">
+            <p>Please input your teammates' scores below</p>
+            <label for="teammate1">Score for teammate 1:</label>
+            <input type="text" id="teammate1"><br>
+            <label for="teammate2">Score for teammate 2:</label>
+            <input type="text" id="teammate2"><br>
+            <div class="next_buttons" data-next="#final_score">Submit</div>
+        </div>
+        
+        <div class="page" id="final_score" style="display: none;">
+            <p>The final score of your team is <span id="group_score"></span>/6<br>
+                You have finished the course!
+            </p> 
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

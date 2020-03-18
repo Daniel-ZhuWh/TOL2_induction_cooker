@@ -37,6 +37,7 @@
     cursor: pointer;
     padding : 5px; 
     margin: 20px;
+/*    display: none;*/
 }
 
 .option_selected {
@@ -80,3 +81,15 @@ body {
     width: 70%;
     margin: 60px auto;
 }
+
+#sing_container, #multi_container {
+/*    position: absolute;*/
+    display: none;
+}
+
+#option_container, {
+    height: 500px;
+    position: static;
+}
+
+
