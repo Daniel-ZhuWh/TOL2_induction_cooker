@@ -10,8 +10,14 @@
     <h1>How do induction cookers work?</h1>
     <p><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
     </header>
-    
-        <div id="timer"></div>
+<!--
+        <div id="timerbox" style="display: none">
+            <button id="hidetime">hide time</button>
+-->
+            <div id="timer"></div>
+<!--            <button class="hide" id="timectrl">hide time</button>-->
+<!--        </div>-->
+        
         <div class="page" id="welcome">
             <p>Below is a short video that tells you how this course works</p>
             <div id="player5"></div>
@@ -76,21 +82,21 @@
 <!--part introduction-->
         <div class="page" id="part_1" style="display: none;">
             <div style="font: Lobster; font-size: 100">Part 1: Magnetic Field and How it could be created</div>
-            Time: 5 mins
+            <p>Time: 5 mins</p>
             <div class="next_buttons start_instr_timer" data-next="#video1">
                 Next
             </div>
         </div>
         <div class="page" id="part_2" style="display: none;">
             <div style="font: Lobster; font-size: 100">Part 2: Electromagnetic Induction</div>
-            Time: 5 mins
+            <p>Time: 5 mins</p>
             <div class="next_buttons start_instr_timer" data-next="#video2">
                 Next
             </div>
         </div>
         <div class="page" id="part_3" style="display: none;">
             <div style="font: Lobster; font-size: 100">Part 3: Ferromagnetism</div>
-            Time: 5 mins
+            <p>Time: 5 mins</p>
             <div class="next_buttons start_instr_timer" data-next="#video3">
                 Next
             </div>
@@ -144,7 +150,7 @@
             </p>
             <div id="start_dis_timer" data-next="#review">Start Discussion</div>
 <!--            <p id="timer"></p>-->
-            <div class="next_buttons" data-next="#review">Next</div>
+            <div class="next_buttons" data-next="#review" id="next_in_dis" style="display: none;">Next</div>
         </div>
         
 <!--  Review page   -->
