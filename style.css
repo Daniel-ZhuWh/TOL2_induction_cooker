@@ -1,13 +1,21 @@
 
-.next_buttons, #start_dis_timer{
-    display: inline-block;
-    width : 135px;
+.next_buttons, #start_dis_timer, .next_assess{
+/*    display: inline-block;*/
+    font-family: "Comic Sans MS";
+    width : auto;
     text-align: center;
-    border : 1px solid grey;
+/*    border : 1px solid grey;*/
     border-radius: 5px;
     cursor: pointer;
-    padding : 5px;
+    padding: 5px 18px;
     transition: .3s all ease-in-out;
+    position: absolute;
+    right: 5px;
+    bottom: -60px;
+    font-weight: 550;
+    font-size: 25px;
+    background-color: white;
+    box-shadow: 2px 2px 2px #639390;
 }
 
 #next_q_btn {
@@ -43,15 +51,6 @@
 .option_selected {
     border : 2px solid blue;
 }
-.next_assess {
-    display: inline-block;
-    width : 135px;
-    text-align: center;
-    border : 1px solid grey;
-    border-radius: 5px;
-    cursor: pointer;
-    padding : 5px;    
-}
 
 #feedback {
     height: auto;
@@ -74,12 +73,17 @@
 .page {
     position: absolute;
     margin: 60px auto;
-    width: 1000px;
+    width: 1200px;
+    height:700px;
+    background-color: #D0ECEC;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #639390;
 }
 
 body {
     width: 70%;
-    margin: 60px auto;
+    margin: 100px auto;
+    background-color: #F5FFFF;
 }
 
 #sing_container, #multi_container {
@@ -93,3 +97,56 @@ body {
 }
 
 
+
+#container {
+    width: 1200px;
+    margin: 0 auto;
+/*    margin-top: 200px;*/
+}
+
+main {
+/*    background-color: #D0ECEC;*/
+/*    height: 700px;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.player {
+/*
+    position: relative;
+    left: 10%;
+    top: 30px;
+*/
+    position: absolute;
+    margin: auto;
+
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+}
+
+h1 {
+    font-family: "Comic Sans MS"
+}
+
+p {
+    font-family: "Open Sans";
+    font-weight: 550;
+/*    display: inline-block;*/
+}
+
+img.welcome_pic {
+    position: absolute;
+    top: -40px;
+    right: 0px;
+/*    display: none;*/
+}
+
+header {
+    position: relative;
+}
+
+span {
+    color: #72A4AA;
+}

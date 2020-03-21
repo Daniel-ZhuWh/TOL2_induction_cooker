@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container" style="width: 70%; margin: auto">
+    <div id="container">
     <header>
-    <h1>How do induction cookers work?</h1>
+    <h1>How do <span>INDUCTION COOKERS</span> work?</h1>
     <p><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
+    <img class="welcome_pic" src="img/welcome_cats.png">
     </header>
 <!--
         <div id="timerbox" style="display: none">
@@ -17,12 +18,11 @@
             <div id="timer"></div>
 <!--            <button class="hide" id="timectrl">hide time</button>-->
 <!--        </div>-->
-        
+<!--    <main>-->
         <div class="page" id="welcome">
-            <p>Below is a short video that tells you how this course works</p>
-            <div id="player5"></div>
+            <div class="player" id="player5"></div>
             <div class="next_buttons" data-next="#choose_branch">
-                Next
+                Start
             </div>
         </div>
             
@@ -104,15 +104,15 @@
         
 <!--video player-->
         <div class="page instr" id="video1" style="display: none;">
-            <div id="player1"></div>
+            <div id="player1" class="player"></div>
             <div class="next_assess" data-next="#assessment1">Next</div>
         </div>
         <div class="page instr" id="video2" style="display: none;">
-            <div id="player2"></div>
+            <div id="player2" class="player"></div>
             <div class="next_assess" data-next="#assessment2">Next</div>
         </div>
         <div class="page instr" id="video3" style="display: none;">
-            <div id="player3"></div>
+            <div id="player3" class="player"></div>
             <div class="next_assess" data-next="#assessment3">Next</div>
         </div>
         
@@ -156,7 +156,7 @@
         
 <!--  Review page   -->
         <div class="page" id="review" style="display: none;">
-            <div id="player4"></div>
+            <div id="player4" class="player"></div>
             <div class="next_buttons" data-next="#final_test">Next</div>
         </div>
         
@@ -285,6 +285,7 @@
                 You have finished the course!
             </p> 
         </div>
+<!--    </main>-->
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="main.js"></script>
