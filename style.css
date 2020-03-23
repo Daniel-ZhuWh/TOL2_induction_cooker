@@ -77,7 +77,7 @@
     border: 3px solid white;
     border-radius: 8px;
     cursor: pointer;
-    padding : 5px; 
+    padding : 8px 14px; 
     margin: 20px auto;
     transition: 0.1s all ease-in-out;
 }
@@ -248,3 +248,7 @@ span {
 }
 
 
+
+#final_test {
+    height: auto;
+}

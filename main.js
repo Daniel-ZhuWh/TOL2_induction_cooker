@@ -441,6 +441,9 @@ function next(el){
 //        console.log(((your_score + score_1 + score_2)/3).toFixed(1));
         document.getElementById('group_score').innerHTML = ((your_score + score_1 + score_2)/3).toFixed(1);
     }
+    if (next.includes('choose_branch')){
+        $('.welcome_pic').fadeOut();
+    }
 }
 
 $(document).ready(function(){
