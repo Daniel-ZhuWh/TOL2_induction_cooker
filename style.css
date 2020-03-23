@@ -136,6 +136,11 @@
     background-color: #D0ECEC;
     border-radius: 10px;
     box-shadow: 3px 3px 5px #639390;
+/*    overflow: scroll;*/
+/*
+    display: flex;
+    flex-direction: column;
+*/
 }
 
 body {
@@ -157,6 +162,7 @@ body {
 
 
 #container {
+    height: auto;
     width: 1200px;
     margin: 0 auto;
 /*    margin-top: 200px;*/
@@ -247,8 +253,14 @@ span {
     color: #72A4AA;
 }
 
-
-
 #final_test {
     height: auto;
+}
+
+footer {
+  margin: 24px 0;
+  font-size: 12px;
+  color: #888888;
+  position: absolute;
+  bottom: -130px;
 }
