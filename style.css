@@ -61,7 +61,7 @@
     font-size: 24px;
     font-family: "Merriweather";
     text-align: center;
-    border: 3px solid white;
+    border: 4px solid white;
     border-radius: 8px;
     cursor: pointer;
     padding : 8px 14px; 
@@ -485,4 +485,29 @@ h {
 	height: 8px;
 	border-radius: 50%;
 	background: white;
+}
+
+#check_multi {
+    font-family: "Comic Sans MS";
+    width : 300px;
+    text-align: center;
+/*    border : 1px solid grey;*/
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 28px;
+    transition: 0.3s all ease-in-out;
+    font-weight: 400;
+    font-size: 25px;
+    background-color: white;
+    box-shadow: 2px 2px 2px #639390;
+/*    margin: 50px auto;*/
+    position: absolute;
+/*    margin: auto;*/
+    bottom: 40px;
+    left: 450px;
+/*
+    right: 0px;
+    top: 0px;
+*/
+    
 }

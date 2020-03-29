@@ -18,7 +18,7 @@ var mchoiceD = document.getElementById('mchoiceD');
 var other_prompt = document.getElementById('other_prompt_content');
 var your_prompt = document.getElementById('your_prompt_content');
 const discussion_time = 900;
-const instr_time = 300;
+const instr_time = 480;
 const quiz_time = 900;
 const timeup_msg = "Time's up! It's time to move on to the next session";
 
