@@ -8,21 +8,19 @@
     <div id="container">
     <header>
     <h1>How do <span>INDUCTION COOKERS</span> work?</h1>
-    <p><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
+    <p class="sub_intro"><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
     <img class="welcome_pic" src="img/welcome_cats.png">
     </header>
-<!--
         <div id="timerbox" style="display: none">
-            <button id="hidetime">hide time</button>
--->
-            <div id="timer"></div>
+<!--            <button id="hidetime">hide time</button>-->
+            <img class="timer_logo" src="img/timer.png">Remaining time:<div id="timer"></div>
 <!--            <button class="hide" id="timectrl">hide time</button>-->
-<!--        </div>-->
+        </div>
 <!--    <main>-->
-        <div class="page" id="welcome">
+        <div class="opague" id="welcome">
             <div class="player" id="player5"></div>
-            <div class="next_buttons" data-next="#choose_branch">
-                Start
+            <div class="next_buttons hidden" data-next="#choose_branch">
+                Next
             </div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
@@ -88,20 +86,24 @@
 <!--part introduction-->
         <div class="page" id="part_1" style="display: none;">
             <div class="intro_page">
-            <img class="intro_img" src="img/part1.png">
-            <p class="chapter">Part 1: Magnetic Field and How it could be created<br><br>Time: 5 mins</p>
+        
+                <p class="chapter"><img class="logo" src="img/title.png"> Magnetic Field and How it could be created</p>
+                <p class="chapter"><img class="logo" src="img/timer.png"> 5 minutes</p>
+                <p class="chapter"><img class="logo" src="img/goal.png"> <span style="color: #406565">Learning objective</span><br>Articulate the procedure of generation of the magnetic field by electricity through the lens of induction cooker</p>
             </div>
                 <div class="next_buttons start_instr_timer" data-next="#video1">
                 Next
-            </div>
+                </div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
             </footer>
         </div>
         <div class="page" id="part_2" style="display: none;">
             <div class="intro_page">
-            <img class="intro_img" src="img/part2.png">
-            <p class="chapter">Part 2: Electromagnetic Induction<br><br>Time: 5 mins</p>
+            
+                <p class="chapter"><img class="logo" src="img/title.png"> Electromagnetic Induction</p>
+                <p class="chapter"><img class="logo" src="img/timer.png"> 5 minutes</p>
+                <p class="chapter"><img class="logo" src="img/goal.png"> <span style="color: #406565">Learning objective</span><br>Explain the origin of eddy current and its implications in induction cooker</p>
             </div>
             <div class="next_buttons start_instr_timer" data-next="#video2">
                 Next
@@ -112,8 +114,10 @@
         </div>
         <div class="page" id="part_3" style="display: none;">
             <div class="intro_page">
-            <img class="intro_img" src="img/part3.png">
-            <p class="chapter">Part 3: Ferromagnetism<br><br>Time: 5 mins</p>
+    
+                <p class="chapter"><img class="logo" src="img/title.png"> Ferromagnetism</p>
+                <p class="chapter"><img class="logo" src="img/timer.png"> 5 minutes</p>
+                <p class="chapter"><img class="logo" src="img/goal.png"> <span style="color: #406565">Learning objective</span><br>Compare and contrast the different materials based on ferromagnetism in the context of an induction cooker.</p>
             </div>
             <div class="next_buttons start_instr_timer" data-next="#video3">
                 Next
@@ -124,23 +128,23 @@
         </div>
         
 <!--video player-->
-        <div class="page instr" id="video1" style="display: none;">
+        <div class="opague instr" id="video1" style="display: none;">
             <div id="player1" class="player"></div>
-            <div class="next_assess" data-next="#assessment1">Next</div>
+            <div class="next_assess hidden" data-next="#assessment1">Next</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
         </div>
-        <div class="page instr" id="video2" style="display: none;">
+        <div class="opague instr" id="video2" style="display: none;">
             <div id="player2" class="player"></div>
-            <div class="next_assess" data-next="#assessment2">Next</div>
+            <div class="next_assess hidden" data-next="#assessment2">Next</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
         </div>
-        <div class="page instr" id="video3" style="display: none;">
+        <div class="opague instr" id="video3" style="display: none;">
             <div id="player3" class="player"></div>
-            <div class="next_assess" data-next="#assessment3">Next</div>
+            <div class="next_assess hidden" data-next="#assessment3">Next</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
@@ -178,25 +182,62 @@
         
 <!--Discussion page-->
         <div class="page" id="discussion" style="display: none;">
-            <p>
-            Discussion Time!
-                Please discuss with your teammates about what you just learned. You have 15 minutes.
+            <p class="discussion_intro">
+            Nice work ! <br><br>
+
+            Now you are equipped with sufficient knowledge to help your team members understand your part. Please start the discussion to teach each other. <br><br>
+
+            Remember you have 15 minutes and your final score is
+            the average of all members’ scores in your team.
             </p>
-            <div id="start_dis_timer" data-next="#review">Start Discussion</div>
+            <div id="start_dis_timer" class="next_buttons" data-next="#discussion_prompt">Start Discussion</div>
 <!--            <p id="timer"></p>-->
-            <div class="next_buttons" data-next="#review" id="next_in_dis" style="display: none;">Next</div>
+<!--            <div class="next_buttons" data-next="#review" id="next_in_dis" style="display: none;">Next</div>-->
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
         </div>
         
 <!--  Review page   -->
+<!--
         <div class="page" id="review" style="display: none;">
             <div id="player4" class="player"></div>
             <div class="next_buttons" data-next="#final_test">Next</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
+        </div>
+-->
+        
+        <div class="page" id="discussion_prompt" style="display: none;">
+            <div id="your_prompt">
+                <div class="pr_wrapper">
+                <h>Your discussion prompts</h>
+                <p id="your_prompt_content">
+                    
+                </p>
+                </div>
+            </div>
+            <div id="other_prompt">
+                <div class="pr_wrapper">
+                <h>Others' discussion prompts</h>
+                <p id="other_prompt_content">
+                    
+                </p>
+                </div>
+            </div>
+            <div class="next_buttons" data-next="#quiz_intro">Continue to final quiz</div>
+        </div>
+        
+        <div class="page" id="quiz_intro" style="display: none">
+            <div class="intro_page">
+    
+                <p class="chapter"><img class="logo" src="img/quiz.png"> FINAL QUIZ</p>
+                <p class="chapter"><img class="logo" src="img/timer.png"> 15 minutes</p>
+                <p class="chapter"><img class="logo" src="img/goal.png"> Now you are going to complete a final quiz that covers all the knowledge that you have learned so far. There will be 6 questions in total and you will be given 15 minutes to finish the quiz. Good luck!</p>
+            </div>
+            
+            <div class="next_buttons" data-next="#final_test">Start</div>
         </div>
         
 <!--  Final test      -->

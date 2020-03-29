@@ -1,8 +1,10 @@
 let current_q = 0;
 let your_score = 0;
+let alert_time = 60;
 let correct_ans = [["A","B"],["A"],["A"],["A"],["C"],["C"]];
 let q_num;
 let q_set;
+let part;
 var count_setInterval;
 var question = document.getElementById('question');
 var choiceA = document.getElementById('choiceA');
@@ -14,10 +16,27 @@ var mchoiceB = document.getElementById('mchoiceB');
 var mchoiceC = document.getElementById('mchoiceC');
 var mchoiceD = document.getElementById('mchoiceD');
 var feedback = document.getElementById('feedback');
+var other_prompt = document.getElementById('other_prompt_content');
+var your_prompt = document.getElementById('your_prompt_content');
 const discussion_time = 900;
 const instr_time = 300;
 const timeup_msg = "Time's up! It's time to move on to the next session";
 
+let prompts = [
+    [
+        'How does an induction cooker create a magnetic field?',
+        'What can generate magnetic field?'
+    ],
+    [
+        'What is eddy current? How is it generated?',
+        'What kinds of energy are involved in the process?'
+    ],
+    [
+        'What kind of material is optimal for pot used on the induction cooker?',
+        'What are the two features of this kind of material?'
+    ],
+    'You can try to explain your part to other students by answering the above questions. Don’t forget to piece them together and try to explain the whole working mechanism of induction cookers.'
+]
 
 let question_set1 = {
     id : 1,
@@ -212,7 +231,7 @@ function onYouTubeIframeAPIReady() {
     videoId: 'RXwczfzxoGg',
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange1
     }
   });
 }
@@ -226,11 +245,20 @@ function onPlayerReady(event){
 }
 
 function onPlayerStateChange(event){
-//    if (event.data == YT.PlayerState.ENDED) {
+    if (event.data == YT.PlayerState.ENDED) {
 //      $('#player').fadeOut();
-//    }
+        console.log('ended')
+        $(".next_assess").removeClass('hidden');
+    }
 }
 
+function onPlayerStateChange1(event){
+    if (event.data == YT.PlayerState.ENDED) {
+//      $('#player').fadeOut();
+        console.log('intro_ended')
+        $(".next_buttons").removeClass('hidden');
+    }
+}
 //function loadQuestions(q_set){
 //    q_num = q_set.q_num;
 //    
@@ -371,20 +399,26 @@ function timer(time, next){
         time = time - 1;
         var min = Math.floor(time/60);
         var sec = time % 60;
-        document.getElementById("timer").innerHTML = min + ':' + sec;
-        $('#timer').fadeIn();
+        $(".sub_intro").fadeOut();
+        $('#timerbox').fadeIn();
+        document.getElementById("timer").innerHTML = '  ' + min + ' Minutes, ' + sec + ' Seconds';
+        
+        if(time <= alert_time){
+            document.getElementById("timer").style.color = "#AC4141";
+        }
         
         if (time < 0){
             clearInterval(x);
-            $('#timer').fadeOut();
+            $('#timerbox').fadeOut();
+            $(".sub_intro").fadeIn();
             if (next.includes("video")){
                 $('.instr').fadeOut();
                 $('#discussion').fadeIn();
                 alert(timeup_msg);
             }
-            if (next.includes("review")){
+            if (next.includes("discussion_prompt")){
                 $('#discussion').fadeOut();
-                $('#review').fadeIn();
+                $('#discussion_prompt').fadeIn();
                 alert(timeup_msg);
             }
         }
@@ -424,13 +458,20 @@ function score_count(){
     return score;
 }
 
+function printPrompt(prompt_list, id){
+    for (var i=0; i < prompt_list.length; i++){
+        document.getElementById(id).innerHTML += prompt_list[i] + "<br><br>";
+    }
+}
+
 function next(el){
     var next = $(el).data('next');
-    $(el).parent('.page').fadeOut();
+    $(el).parent().fadeOut();
     $(next).fadeIn();
-    if (next.includes('discussion')||next.includes('review')){
+    if (next.includes('discussion')||next.includes('quiz_intro')){
         clearInterval(count_setInterval);
-        $('#timer').fadeOut();
+        $('#timerbox').fadeOut();
+        $(".sub_intro").fadeIn();
     }
     if (next.includes('final_score')){
         var score_1 = parseInt(document.getElementById('teammate1').value);
@@ -443,6 +484,39 @@ function next(el){
     }
     if (next.includes('choose_branch')){
         $('.welcome_pic').fadeOut();
+        player5.stopVideo();
+    }
+    if (next.includes('discussion_prompt')){
+        var next = $(this).data('next');
+//        $(this).fadeOut();
+//        $('#next_in_dis').fadeIn();
+        count_setInterval = timer(discussion_time, next);
+        switch (part){
+            case 1:
+                printPrompt(prompts[0],'your_prompt_content');
+                your_prompt.innerHTML += prompts[3];
+                other_prompt.innerHTML += "Part 2: <br>";
+                printPrompt(prompts[1],'other_prompt_content');
+                other_prompt.innerHTML += "Part 3: <br>";
+                printPrompt(prompts[2],'other_prompt_content');
+                break;
+            case 2:
+                printPrompt(prompts[1],'your_prompt_content');
+                your_prompt.innerHTML += prompts[3];
+                other_prompt.innerHTML += "Part 1: <br>";
+                printPrompt(prompts[0],'other_prompt_content');
+                other_prompt.innerHTML += "Part 3: <br>";
+                printPrompt(prompts[2],'other_prompt_content');
+                break;
+            case 3:
+                printPrompt(prompts[2],'your_prompt_content');
+                your_prompt.innerHTML += prompts[3];
+                other_prompt.innerHTML += "Part 1: <br>";
+                printPrompt(prompts[0],'other_prompt_content');
+                other_prompt.innerHTML += "Part 2: <br>";
+                printPrompt(prompts[1],'other_prompt_content');
+                break;
+        }
     }
 }
 
@@ -452,7 +526,18 @@ $(document).ready(function(){
     });
     
     $(".next_buttons_link").click(function(){
-        next(this)
+        next(this);
+        var branch = $(this).data('next');
+        if (branch.includes('1')){
+            part = 1;
+        }
+        if (branch.includes('2')){
+            part = 2;
+        }
+        if (branch.includes('3')){
+            part = 3;
+        }
+        console.log(part);
     });
     
     $(".sing_option").click(function(){
@@ -495,12 +580,12 @@ $(document).ready(function(){
     });
     })
     
-    $("#start_dis_timer").click(function(){
-        var next = $(this).data('next');
-        $(this).fadeOut();
-        $('#next_in_dis').fadeIn();
-        count_setInterval = timer(discussion_time, next);
-    });
+//    $("#start_dis_timer").click(function(){
+//        var next = $(this).data('next');
+//        $(this).fadeOut();
+//        $('#next_in_dis').fadeIn();
+//        count_setInterval = timer(discussion_time, next);
+//    });
     
     $(".start_instr_timer").click(function(){
         var next = $(this).data('next');
