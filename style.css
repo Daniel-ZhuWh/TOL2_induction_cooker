@@ -1,5 +1,5 @@
 
-.next_buttons, #start_dis_timer, .next_assess, #next_q_btn{
+.next_buttons, #start_dis_timer, .next_assess, #next_q_btn, .submission{
 /*    display: inline-block;*/
     font-family: "Comic Sans MS";
     width : auto;
@@ -18,7 +18,7 @@
     box-shadow: 2px 2px 2px #639390;
 }
 
-.next_buttons:hover, #start_dis_timer:hover, .next_assess:hover, #next_q_btn:hover{
+.next_buttons:hover, #start_dis_timer:hover, .next_assess:hover, #next_q_btn:hover, .submission:hover{
     background: #72A4AA;
     color: white;
 }
@@ -54,19 +54,6 @@
 
 
 .option {
-
-/*
-    height : auto;
-    width: 80%;
-    background-color: white;
-    text-align: center;
-    border: 3px solid white;
-    border-radius: 8px;
-    cursor: pointer;
-    padding : 5px; 
-    margin: 20px auto;
-*/
-
     cursor: pointer;
     height : auto;
     width: 600px;
@@ -90,16 +77,6 @@
 
 .option_selected {
     border-color : #496D71;
-/*
-    outline: 2px #72A4AA;
-    outline-offset: -2px;
-*/
-/*
-    outline: #72A4AA solid 2px;
-    outline-offset: -2px;
-    out
-*/
-/*    box-shadow:inset 0 0 5px #72A4AA;*/
 }
 
 .option_selected:hover {
@@ -117,17 +94,23 @@
     padding : 8px 14px;
 }
 
+.feedback {
+    color: white;
+    font-size: 20px;
+    width: 900px; 
+    height: auto;
+    padding: 5px;
+    margin: 20px 0;
+    padding : 8px 14px;
+}
+
 .feedback_correct {
     background-color: #72A4AA;
-/*    border : 2px solid darkgreen;*/
-/*    border-color: darkgreen;*/
     border-radius: 8px;
 }
 
 .feedback_wrong {
     background-color: #C17E7E;
-/*    border : 2px solid darkred;*/
-/*    border-color: darkred;*/
     border-radius: 8px;
 }
 .page {
@@ -138,11 +121,6 @@
     background-color: #D0ECEC;
     border-radius: 10px;
     box-shadow: 3px 3px 5px #639390;
-/*    overflow: scroll;*/
-/*
-    display: flex;
-    flex-direction: column;
-*/
 }
 
 body {
@@ -171,14 +149,6 @@ body {
 }
 
 main {
-/*    background-color: #D0ECEC;*/
-/*    height: 700px;*/
-/*
-    position: relative;
-    height: 920px;
-    width: 100%;
-    overflow: hidden;
-*/
 }
 
 .player {
@@ -362,4 +332,157 @@ h {
     left: 0px;
     top: 0px;
     right: 0px;
+}
+
+.sub_intro {
+    font-size: 20px;
+}
+
+#back_to_video {
+    width : 180px;
+    position: absolute;
+    left: 5px;
+    bottom: -60px;
+
+}
+
+#quiz_container {
+    height: auto;
+    margin: 40px 50px;
+    font-size: 25px;
+}
+
+.question {
+    margin: 0 ;
+}
+
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark1 {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked ~ .checkmark1 {
+  background-color: #496D71;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark1:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.container2 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container2:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container2 input:checked ~ .checkmark {
+  background-color: #496D71;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container2 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container2 .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
 }
