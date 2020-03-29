@@ -1,7 +1,7 @@
 let current_q = 0;
 let your_score = 0;
 let alert_time = 60;
-let correct_ans = [["A","B"],["A"],["A"],["A"],["C"],["C"]];
+let correct_ans = [["A","B"],["A"],["A"],["A"],["C"],["B"]];
 let q_num;
 let q_set;
 let part;
@@ -530,6 +530,10 @@ function score_count(){
         }
     }
     return score;
+}
+
+function renderProgress(){
+    var = num
 }
 
 function printPrompt(prompt_list, id){
