@@ -331,11 +331,11 @@ h {
 /*    margin: 60px;*/
     font-family: "Open Sans";
     font-weight: 600;
-    font-size: 34px;
+    font-size: 33px;
 }
 
 .pr_wrapper {
-    margin: 40px 60px;
+    margin: 40px 70px;
 }
 
 .disabled {
@@ -353,4 +353,13 @@ h {
 
 .hidden {
     display: none;
+}
+
+#bulb {
+    position: absolute;
+    margin: auto;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
 }
