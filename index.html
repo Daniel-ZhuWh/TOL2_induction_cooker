@@ -8,14 +8,19 @@
     <div id="container">
     <header>
     <h1>How do <span>INDUCTION COOKERS</span> work?</h1>
-    <p class="sub_intro"><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
+    <div id="sub_title">
+        <p class="sub_intro"><em>Induction cookers</em> can magically heat food without using fire. Do you know how it works?</p>
+    <div id="timerbox" style="display: none">
+            <img class="timer_logo" src="img/timer.png">Remaining time:<div id="timer"></div>
+        </div>
+        </div>
     <img class="welcome_pic" src="img/welcome_cats.png">
     </header>
+<!--
         <div id="timerbox" style="display: none">
-<!--            <button id="hidetime">hide time</button>-->
             <img class="timer_logo" src="img/timer.png">Remaining time:<div id="timer"></div>
-<!--            <button class="hide" id="timectrl">hide time</button>-->
         </div>
+-->
 <!--    <main>-->
         <div class="opague" id="welcome">
             <div class="player" id="player5"></div>
@@ -110,6 +115,10 @@
         
 <!--Assessment questions-->
         <div class="page instr" id="assessment" style="display: none;">
+            <div id="progress">
+            
+            </div>
+            
             <div id="question"></div>
             
             <div id="option_container">
@@ -131,12 +140,19 @@
             <div id="feedback"></div>
             <button id="check_multi" onclick="check_multi()" style="display: none;">Check my answers</button>
             <button id="next_q_btn" onclick="next_q()">Next question</button>
-            <div class="next_buttons" id="discussion_btn" data-next="#discussion" style="display: none">Continue to discussion</div>
-            <div class="next_buttons" id="back_to_video" data-next="#video" style="display: none">Back to video</div>
+            <div class="next_buttons" id="discussion_btn" data-next="#self_prompt" style="display: none">Next</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
             
+        </div>
+        
+        <div class="page" id="self_prompt" style="display: none;">
+            <p class="prompt_intro">You are going to have a discussion with your teammates next. Make sure that you will be able to answer the follwoing questions before you proceed. You can go back to review the video by clicking on the back button.</p>
+            <div class="prompt_recap"><img class="logo" src="img/goal.png"><p id="prompt1"></p></div>
+            <div class="prompt_recap"><img class="logo" src="img/goal.png"><p id="prompt2"></p></div>
+            <div class="next_buttons" data-next="#discussion">Continue to discussion</div>
+            <div class="next_buttons back_to_video" data-next="#video">Back to video</div>
         </div>
         
 <!--Discussion page-->
@@ -292,7 +308,12 @@
         </div>
         
         <div class="page" id="indiv_score" style="display: none;">
-            <p>Congratulations! You earned a score of <span id="score"></span>!</p>
+            <p style="color: #535353; font-size: 50px; margin: 60px 40px; ">You earned a score of</p>
+            <div class="score_wrapper">
+                <img src="img/star1.png">
+                <div id="score"></div>
+            </div>
+            
             <div class="next_buttons" data-next="#add_score">Next</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
@@ -300,20 +321,32 @@
         </div>
         
         <div class="page" id="add_score" style="display: none;">
-            <p>Please input your teammates' scores below</p>
-            <label for="teammate1">Score for teammate 1:</label>
-            <input type="text" id="teammate1"><br>
-            <label for="teammate2">Score for teammate 2:</label>
+            <p class="team_add">Please input your teammates' scores below</p>
+            <div style="margin: 100px 300px;">
+            <label class="input_score" for="teammate1">Score for teammate 1:</label>
+            <input type="text" id="teammate1"><br><br>
+            <label class="input_score" 
+            for="teammate2">Score for teammate 2:</label>
             <input type="text" id="teammate2"><br>
+            </div>
             <div class="next_buttons" data-next="#final_score">Submit</div>
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>
         </div>
         <div class="page" id="final_score" style="display: none;">
-            <p>The final score of your team is <span id="group_score"></span>/6<br>
-                You have finished the course!
-            </p> 
+            <img src="img/congrats.png" style="margin-top: 30px;">
+            <p style="font-size: 50px">Congratulations!!</p>
+            <p style="font-size: 35px">You have finished the course!</p>
+            <div style="font-size: 35px; font-weight: 600">Your final score: 
+                <div id="final_wrapper">
+                    <img src="img/star2.png" style="margin: 0 20px">
+                    <div id="final_score_container">
+                    <div id="group_score"></div>
+                    /6
+                    </div>
+                </div>
+            </div> 
             <footer>
             <p class="copyright">@2020. Crafted by Shijie Zhu, Junhui Yao and Shujing Lin. TOL Project 2</p>
         </footer>

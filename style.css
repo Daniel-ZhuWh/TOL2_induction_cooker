@@ -136,7 +136,7 @@ body {
 
 #option_container, {
     height: 500px;
-    position: static;
+    position: relative;
 }
 
 
@@ -200,12 +200,16 @@ p {
 /*    display: inline-block;*/
 }
 
-p.intro, #question {
+p.intro, #question, p.prompt_intro, p.team_add {
     width: 80%;
     margin: 60px auto;
     font-weight: 400;
     font-size: 27px;
     font-family: "Open Sans";
+}
+
+p.team_add {
+    margin-top: 150px
 }
 
 p.discussion_intro {
@@ -254,8 +258,9 @@ footer {
 
 .logo {
     vertical-align: text-bottom;
-    max-height:60px;
+    max-height: 60px;
     width:auto;
+    margin: 0 10px;
 }
 
 .timer_logo {
@@ -268,6 +273,7 @@ footer {
     font-family: "Open Sans";
     font-weight: bold;
     font-size: 18px;
+    position: absolute;
 }
 
 #timer {
@@ -336,9 +342,10 @@ h {
 
 .sub_intro {
     font-size: 20px;
+    position: absolute;
 }
 
-#back_to_video {
+.back_to_video {
     width : 180px;
     position: absolute;
     left: 5px;
@@ -510,4 +517,116 @@ h {
     top: 0px;
 */
     
+}
+
+#progress {
+    width : 500px;
+    position: absolute;
+    top : -80px;
+    right : 10px;
+    padding:5px;
+    text-align: right;
+}
+
+.prog {
+    display: inline-block;
+}
+
+.dot {
+    width : 40px;
+    height : 40px;
+    border: 6px solid #C3DBDB;
+/*    display: inline-block;*/
+    border-radius: 50%;
+    background-color: white;
+    margin-left : 3px;
+    margin-right : 3px;
+    transition: 0.2s all ease-in-out;
+}
+
+.bar {
+    width: 50px;
+    height: 7px;
+    background-color: #C3DBDB;
+    border-radius: 2px;
+/*    vertical-align: baseline;*/
+/*    text-align: center;*/
+/*    padding: 10px;*/
+/*
+    margin-top: auto;
+    margin-bottom: auto;
+*/
+    position: relative;
+    bottom: 21px;
+    transition: 0.2s all ease-in-out;
+}
+
+.dot_covered {
+    border-color: #72A4AA;
+    background-color: #8ECACA;
+}
+
+.bar_covered {
+    background-color: #72A4AA
+}
+
+
+#prompt1, #prompt2 {
+    display: inline-block;
+    font-family: "Open Sans";
+    font-size: 30px;
+/*    padding: 10*/
+}
+
+.prompt_recap {
+    margin: 20px 100px;
+}
+
+.score_wrapper {
+    position: relative;
+    width: 414px;
+    margin: auto;
+}
+
+#score {
+    position: absolute;
+    top: 33%;
+    left: 46%;
+    color: #535353;
+    font-size: 65px;
+    font-weight: 600;
+    
+}
+
+#final_score {
+    text-align: center;
+}
+
+#final_wrapper {
+    position: relative;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#final_score_container {
+    position: absolute;
+    top: 33%;
+    left: 34%;
+    font-size: 30px;
+}
+
+#sub_title {
+    height: 60px;
+    position: relative;
+}
+
+
+
+.input_score {
+    margin: 20px 50px
+}
+
+#group_score {
+    display: inline-block;
 }
